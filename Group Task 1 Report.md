@@ -89,16 +89,19 @@ Our focus will be on investigating the nature of the dataset relating to loans. 
 ```{r}
 ### All loans df
 AllLoans <- fread('raw/all_loans.csv', stringsAsFactors = T, drop = c('PRODUCT_NAME', 'CURRENCY'))
-AllLoans$BOOK_DATE =  as.Date(AllLoans$BOOK_DATE)
-AllLoans$MATURITY_DATE =  as.Date(AllLoans$MATURITY_DATE)
+AllLoans$BOOK_DATE <- as.Date(AllLoans$BOOK_DATE,"%m/%d/%Y")
+AllLoans$MATURITY_DATE =  as.Date(AllLoans$MATURITY_DATE,"%m/%d/%Y")
 AllLoans$AMOUNT_FINANCED =  as.double(AllLoans$AMOUNT_FINANCED)
 
 ```
-How many loan applications were received? A total of 278505 observations were recorded between 
+How many loan applications were received? A total of 278505 observations were recorded between September 2015 and November 2019
 ```{r}
 count(AllLoans)
+
 min(AllLoans$BOOK_DATE)
 max(AllLoans$BOOK_DATE)
+
+
 ```
 
 ```{r}
