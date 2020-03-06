@@ -1,8 +1,8 @@
 ---
-title: "GROUP TASK 1: Application of Data Science Tools and Technique to Improve a Lending Business"
-authors: "Ayobami Adeyeye; Jindu Kwentua; Eyo Ekpenyong"
-date: "3/6/2020"
-output: pdf_document
+Title: "GROUP TASK 1: Application of Data Science Tools and Technique to Improve a Lending Business"
+Authors: "Ayobami Adeyeye; Jindu Kwentua; Eyo Ekpenyong"
+Date: "3/6/2020"
+Output: pdf_document
 ---
 
 
