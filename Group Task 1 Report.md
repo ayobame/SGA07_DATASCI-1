@@ -18,7 +18,7 @@ Our objective will be to analyze this data in order to provide answers the follo
 
 -	What does the loan data distribution for the bank looks like? Using data science  we will illustrate the most important aspects related to the loans and perform EDA
 -	Are the loan grades from the bank optimal? Loan grades measure the likelihood of a client to incur a default, hence crucial for the bank's profitablility
--	Can we create a better optimized model to predict credit risk and beat the currently existing score?
+-	Can we create a better optimized model to predict credit risk and beat the currently existing score? 
 
 
 ```{r cars}
