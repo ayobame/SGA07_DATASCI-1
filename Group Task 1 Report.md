@@ -25,14 +25,10 @@ The Nigerian Lending space is ripe with amazing potentials given its reception a
 
 ## Data Preparation and Preprocessing
 
-**Data source: **
-
-Awaiting permission...
+**Data source:** Awaiting permission...
 
   
-**The Data set**
-
-The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
+**The Data set:** The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
 
 all_accounts.csv
 
@@ -53,11 +49,9 @@ bureau_score.csv
 dictionary.csv
 
  
-**Featured Tools**
+**Featured Tools**: R, python
 
-R, python
-
-Loading libraries in R: data.table,tidyverse,lubridate,ggplot2, dply
+***Loading libraries in R:*** data.table,tidyverse,lubridate,ggplot2, dply
 
 ```{r library}
 library(pacman)
