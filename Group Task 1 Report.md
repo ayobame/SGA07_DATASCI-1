@@ -31,13 +31,21 @@ Data source: Awaiting permission...
 The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
 
 all_accounts.csv
+
 all_balances.csv
+
 all_demographics.csv
+
 all_investments.csv
+
 all_loans.csv
+
 all_loans_application.csv
+
 all_transactions_digital.csv
+
 bureau_score.csv
+
 dictionary.csv
 
 
