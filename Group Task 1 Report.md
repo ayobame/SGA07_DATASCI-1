@@ -29,7 +29,7 @@ The Nigerian Lending space is ripe with amazing potentials given its reception a
 
 Awaiting permission...
 
-
+  
 **The Data set**
 
 The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
@@ -52,11 +52,13 @@ bureau_score.csv
 
 dictionary.csv
 
+ 
 **Featured Tools**
 
 R, python
 
 Loading libraries in R: data.table,tidyverse,lubridate,ggplot2, dply
+
 ```{r library}
 library(pacman)
 pacman::p_load(data.table,tidyverse,lubridate,ggplot2, dply)
