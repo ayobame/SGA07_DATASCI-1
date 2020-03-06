@@ -35,26 +35,29 @@ pacman::p_load(data.table,tidyverse,lubridate,ggplot2, dply)
 ```
   
 **The Data set:** The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
-
+****
 all_accounts.csv
 ```{r}
 all_accounts<-read_csv("raw/all_accounts.csv")
 
 ```
-
+****
 all_balances.csv
 ```{r}
 all_balances <- read_csv("raw/all_balances.csv")
 ```
+****
 all_demographics.csv
 ```{r}
 all_demographics <- read_delim("raw/all_demographics.csv", "|", escape_double = FALSE, trim_ws = TRUE)
 
 ```
+****
 all_investments.csv
 ```{r}
 all_investments <- read_csv("raw/all_investments.csv")
 ```
+****
 all_loans.csv
 ```{r}
 all_loans <- read_csv("raw/all_loans.csv")
@@ -89,12 +92,23 @@ How many loan applications were received? Out of a total of 278505 observations
 ```
 
 
-
+Our focus will be on investigating the nature of the dataset relating to loans. As shown below, all character columns is converted to factors so that the leading zeros present in the AllLoans$CUSTOMER_UNIQUE_ID column is retained and columns such as PRODUCT_NAME and CURRENCY were dropped since all observations were in Nigerian Naira NGN.
 ```{r}
-ggplot(as.data.frame(table(mtcars$vs)), aes(x=Var1, y=Freq))+geom_bar(stat = "identity")
 
 ### All loans df
-AllLoans <- fread('all_loans.csv', stringsAsFactors = F, drop = c('PRODUCT_NAME', 'CURRENCY'))
+AllLoans <- fread('raw/all_loans.csv', stringsAsFactors = T, drop = c('PRODUCT_NAME', 'CURRENCY'))
+AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$CUSTOMER_UNIQUE_ID)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$LOAN_REF)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$PRODUCT_CODE)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$ACCOUNT_STATUS)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$MASKED_ACCOUNT)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.Date(AllLoans$BOOK_DATE)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.Date(AllLoans$MATURITY_DATE)
+AllLoans$CUSTOMER_UNIQUE_ID =  as.double(AllLoans$AMOUNT_FINANCED)
+```
+
+
+```{r}
 AllLoansdf <- AllLoans %>% group_by(CUSTOMER_UNIQUE_ID) %>% filter(BOOK_DATE == max(BOOK_DATE))
 ### All loans application
 AllLoansApplication <- fread('all_loans_application.csv', drop = c('OFFERID','APPLICATION_STATUS', 'MODULE'))
