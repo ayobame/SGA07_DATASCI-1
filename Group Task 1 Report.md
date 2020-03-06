@@ -29,23 +29,45 @@ The Nigerian Lending space is ripe with amazing potentials given its reception a
 **The Data set:** The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
 
 all_accounts.csv
+```{r}
+all_accounts<-read_csv("raw/all_accounts.csv")
+
+```
 
 all_balances.csv
-
+```{r}
+all_balances <- read_csv("raw/all_balances.csv")
+```
 all_demographics.csv
+```{r}
+all_demographics <- read_delim("raw/all_demographics.csv", "|", escape_double = FALSE, trim_ws = TRUE)
 
+```
 all_investments.csv
-
+```{r}
+all_investments <- read_csv("raw/all_investments.csv")
+```
 all_loans.csv
-
+```{r}
+all_loans <- read_csv("raw/all_loans.csv")
+```
 all_loans_application.csv
-
+```{r}
+all_loans_application <- read_csv("raw/all_loans_application.csv")
+```
 all_transactions_digital.csv
-
+```{r}
+all_transactions_digital <- read_csv("raw/all_transactions_digital.csv")
+```
 bureau_score.csv
-
+```{r}
+bureau_score <- read_csv("raw/bureau_score.csv")
+```
+****
 dictionary.csv
-
+```{r}
+dictionary <- read_csv("raw/dictionary.csv", skip=1)
+```
  
 **Featured Tools**: R, python
 
@@ -57,7 +79,17 @@ pacman::p_load(data.table,tidyverse,lubridate,ggplot2, dply)
 ```
 
 **Preprocessing**
+
+How many loan applications were received? Out of a total of 278505 observations
 ```{r}
+
+```
+
+
+
+```{r}
+ggplot(as.data.frame(table(mtcars$vs)), aes(x=Var1, y=Freq))+geom_bar(stat = "identity")
+
 ### All loans df
 AllLoans <- fread('all_loans.csv', stringsAsFactors = F, drop = c('PRODUCT_NAME', 'CURRENCY'))
 AllLoansdf <- AllLoans %>% group_by(CUSTOMER_UNIQUE_ID) %>% filter(BOOK_DATE == max(BOOK_DATE))
@@ -94,15 +126,10 @@ length(unique(AllTransactionsDigital$CUSTOMER_UNIQUE_ID))
 # AllBalancesDf$VAL_DT <- mdy( as.character(AllBalancesDf$VAL_DT) )
 # str(AllDemographicsDf)
 ```
+**Models**
+
+**Visualization**
+
+**References**
 
 
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
