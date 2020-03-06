@@ -12,9 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The Nigerian Lending space is ripe with amazing potentials given its reception and the competitive rates available to meet the diverse monetary needs of a wide array of customers. Using data science, exploratory data analysis and a data set from one of Nigerian's leading banks.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Our objective will be to analyze this data in order to provide answers the following questions which seeks to benefit the bank's lending business.
+
+-	What does the loan data distribution for the bank looks like? Using data science  we will illustrate the most important aspects related to the loans and perform EDA
+-	Are the loan grades from the bank optimal? Loan grades measure the likelihood of a client to incur a default, hence crucial for the bank's profitablility
+-	Can we create a better optimized model to predict credit risk and beat the currently existing score?
+
 
 ```{r cars}
 summary(cars)
