@@ -25,6 +25,14 @@ The Nigerian Lending space is ripe with amazing potentials given its reception a
 
 **Data source:** Awaiting permission...
 
+**Featured Tools**: R, python
+
+***Loading libraries in R:*** data.table,tidyverse,lubridate,ggplot2, dply
+
+```{r library}
+library(pacman)
+pacman::p_load(data.table,tidyverse,lubridate,ggplot2, dply)
+```
   
 **The Data set:** The dataset contains 9 csv files which includes a file for referencing names mentioned in other files for better meaning named "dictionary.csv".
 
@@ -51,14 +59,17 @@ all_loans.csv
 ```{r}
 all_loans <- read_csv("raw/all_loans.csv")
 ```
+****
 all_loans_application.csv
 ```{r}
 all_loans_application <- read_csv("raw/all_loans_application.csv")
 ```
+****
 all_transactions_digital.csv
 ```{r}
 all_transactions_digital <- read_csv("raw/all_transactions_digital.csv")
 ```
+****
 bureau_score.csv
 ```{r}
 bureau_score <- read_csv("raw/bureau_score.csv")
@@ -69,14 +80,6 @@ dictionary.csv
 dictionary <- read_csv("raw/dictionary.csv", skip=1)
 ```
  
-**Featured Tools**: R, python
-
-***Loading libraries in R:*** data.table,tidyverse,lubridate,ggplot2, dply
-
-```{r library}
-library(pacman)
-pacman::p_load(data.table,tidyverse,lubridate,ggplot2, dply)
-```
 
 **Preprocessing**
 
