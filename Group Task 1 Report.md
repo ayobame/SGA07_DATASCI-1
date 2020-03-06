@@ -85,28 +85,21 @@ dictionary <- read_csv("raw/dictionary.csv", skip=1)
  
 
 **Preprocessing**
-
-How many loan applications were received? Out of a total of 278505 observations
+Our focus will be on investigating the nature of the dataset relating to loans. As shown below, all character columns are being converted to factors so that the leading zeros present in the AllLoans$CUSTOMER_UNIQUE_ID column is retained. Columns such as PRODUCT_NAME and CURRENCY were dropped since all observations were in Nigerian Naira NGN.
 ```{r}
-
-```
-
-
-Our focus will be on investigating the nature of the dataset relating to loans. As shown below, all character columns is converted to factors so that the leading zeros present in the AllLoans$CUSTOMER_UNIQUE_ID column is retained and columns such as PRODUCT_NAME and CURRENCY were dropped since all observations were in Nigerian Naira NGN.
-```{r}
-
 ### All loans df
 AllLoans <- fread('raw/all_loans.csv', stringsAsFactors = T, drop = c('PRODUCT_NAME', 'CURRENCY'))
-AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$CUSTOMER_UNIQUE_ID)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$LOAN_REF)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$PRODUCT_CODE)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$ACCOUNT_STATUS)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.character(AllLoans$MASKED_ACCOUNT)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.Date(AllLoans$BOOK_DATE)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.Date(AllLoans$MATURITY_DATE)
-AllLoans$CUSTOMER_UNIQUE_ID =  as.double(AllLoans$AMOUNT_FINANCED)
-```
+AllLoans$BOOK_DATE =  as.Date(AllLoans$BOOK_DATE)
+AllLoans$MATURITY_DATE =  as.Date(AllLoans$MATURITY_DATE)
+AllLoans$AMOUNT_FINANCED =  as.double(AllLoans$AMOUNT_FINANCED)
 
+```
+How many loan applications were received? A total of 278505 observations were recorded between 
+```{r}
+count(AllLoans)
+min(AllLoans$BOOK_DATE)
+max(AllLoans$BOOK_DATE)
+```
 
 ```{r}
 AllLoansdf <- AllLoans %>% group_by(CUSTOMER_UNIQUE_ID) %>% filter(BOOK_DATE == max(BOOK_DATE))
