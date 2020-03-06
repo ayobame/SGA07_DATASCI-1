@@ -5,9 +5,7 @@ date: "3/6/2020"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ## Summary
 The goal of this report seeks to apply data science techniques to determine how derived insight can help benefit a lending business.
